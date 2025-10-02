@@ -1,0 +1,49 @@
+<!-- converter.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter - ToolHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">ToolHub</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="qr.html">QR Code Generator</a></li>
+                <li><a href="short.html">Short Link Generator</a></li>
+                <li><a href="password.html">Password Generator</a></li>
+                <li><a href="color.html">Color Picker</a></li>
+                <li><a href="text.html">Text Tools</a></li>
+                <li><a href="converter.html">Unit Converter</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tool-section">
+            <h1>Unit Converter</h1>
+            <p>Convert length: cm to inches.</p>
+            <input type="number" id="cm" placeholder="Enter cm">
+            <button onclick="convertCmToInch()">Convert</button>
+            <p id="inch-output"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ToolHub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function convertCmToInch() {
+            const cm = document.getElementById('cm').value;
+            const inches = (cm / 2.54).toFixed(2);
+            document.getElementById('inch-output').textContent = `${cm} cm = ${inches} inches`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!-- qr.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - ToolHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">ToolHub</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="qr.html">QR Code Generator</a></li>
+                <li><a href="short.html">Short Link Generator</a></li>
+                <li><a href="password.html">Password Generator</a></li>
+                <li><a href="color.html">Color Picker</a></li>
+                <li><a href="text.html">Text Tools</a></li>
+                <li><a href="converter.html">Unit Converter</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tool-section">
+            <h1>QR Code Generator</h1>
+            <p>Enter text or URL to generate a QR code.</p>
+            <input type="text" id="qr-input" placeholder="Enter text/URL">
+            <button onclick="generateQR()">Generate</button>
+            <div id="qr-code"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ToolHub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function generateQR() {
+            const input = document.getElementById('qr-input').value;
+            const qrDiv = document.getElementById('qr-code');
+            qrDiv.innerHTML = '';
+            new QRCode(qrDiv, {
+                text: input,
+                width: 256,
+                height: 256,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+    </script>
+</body>
+</html>
